@@ -1,4 +1,13 @@
+import pandas as pd
+
 def validate_date(date_str):
-    pass
+    try:
+        pd.to_datetime(date_str)
+        return True
+    except ValueError:
+        return False
+
 def validate_amount(amount_str):
-    pass
+    if amount_str.replace('.', '', 1).isdigit() and float(amount_str) > 0:
+        return float(amount_str)
+    return None
