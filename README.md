@@ -85,7 +85,7 @@ When you select **Plot Category Chart**, the app generates a **category-wise exp
 
 ###  Sample Chart Output
 
-![Category Expenses](screenshots/category_expenses.png)
+![Category Expenses](category_expenses.png)
 
 > The chart shows total spending grouped by category.
 
