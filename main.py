@@ -7,14 +7,16 @@ def main():
     print(f"==== Expense Tracker CLI ====")
     while True:
         print("1. Add Expense")
-        print("2. View All Expenses")
-        print("3. View Summary")
-        print("4. Exit")
+        print("2. View Summary")
+        print("3. View All Expenses")
+        print("4. Plot Category Chart")
+        print("5. Monthly Breakdown")
+        print("6. Exit")
 
         choice = input("\nEnter your choice: ")
 
         if choice == "1":
-            date = input("Enter date (YYYY-MM-DD) [default: today]: ") or pd.Timestamp.today().strftime('%Y-%m-%d')
+            date = input("\nEnter date (YYYY-MM-DD) [default: today]: ") or pd.Timestamp.today().strftime('%Y-%m-%d')
             if not validate_date(date):
                 print("Invalid date format! Please use YYYY-MM-DD.\n")
                 continue
@@ -32,11 +34,15 @@ def main():
         elif choice == "2":
             print("\nExpense Summary:")
             summary()
+        elif choice == "3":
             print("\nAll Expenses:")
             view_all()
-        elif choice == "3":
-            plot_category_chart()
         elif choice == "4":
+            plot_category_chart()
+        elif choice == "5":
+            print("\nMonthly Expense Breakdown:")
+            monthly_breakdown()
+        elif choice == "6":
             break
         else:
             print("Invalid choice!\n")
